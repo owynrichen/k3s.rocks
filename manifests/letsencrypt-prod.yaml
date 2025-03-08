@@ -9,6 +9,13 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-    - http01:
-        ingress:
-          class: traefik
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: token
+          cnameStrategy:
+            Follow
+    # - http01:
+    #     ingress:
+    #       class: traefik

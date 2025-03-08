@@ -10,7 +10,7 @@ spec:
   type: ClusterIP
   ports:
   - name: traefik
-    port: 9000
+    port: 9123
     targetPort: traefik
     protocol: TCP
   selector:
